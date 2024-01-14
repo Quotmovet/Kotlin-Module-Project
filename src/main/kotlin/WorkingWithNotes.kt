@@ -1,5 +1,6 @@
 import java.util.*
 class WorkingWithNotes (private val archives: Archives){
+
     private val scanner = Scanner(System.`in`)
     private val methods = Methods()
     private lateinit var selectedArchive: AllArchives

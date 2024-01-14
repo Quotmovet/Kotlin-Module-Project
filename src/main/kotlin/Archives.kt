@@ -1,5 +1,6 @@
 import java.util.*
 class Archives {
+
     private val scanner = Scanner(System.`in`)
     private val allArchives = mutableListOf<AllArchives>()
     private val workingNotes = WorkingWithNotes(this)
@@ -16,7 +17,7 @@ class Archives {
             { methods.exitProgramme() }
         )
 
-        methods.menu(title, scope, actions)
+        methods.menuPattern(title, scope, actions)
     }
 
     internal fun subMenu(selectedArchive: AllArchives) {
@@ -30,7 +31,7 @@ class Archives {
             { mainMenu() }
         )
 
-        methods.menu(title, scope, actions)
+        methods.menuPattern(title, scope, actions)
     }
 
     private fun createArchives() {

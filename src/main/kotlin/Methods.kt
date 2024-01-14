@@ -1,10 +1,11 @@
 import kotlin.system.exitProcess
 import java.util.*
 class Methods {
+
     val scanner = Scanner(System.`in`)
 
     // Паттерн меню
-    fun menu(title: String, scope: List<String>, actions: List<() -> Unit>) {
+    fun menuPattern(title: String, scope: List<String>, actions: List<() -> Unit>) {
         var intValue: Int?
 
         do {
