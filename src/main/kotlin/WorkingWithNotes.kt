@@ -9,7 +9,7 @@ class WorkingWithNotes (private val archives: Archives){
         this.selectedArchive = selectedArchive
         val nameNote = methods.inputNonEmptyString("Введите наименование заметки: ")
 
-        println("Заметка '$nameNote' создана.")
+        println("Заметка '$nameNote' создана.\n")
 
         val textOfNote = methods.inputNonEmptyString("Введите текст заметки: ")
 
@@ -22,27 +22,12 @@ class WorkingWithNotes (private val archives: Archives){
     }
 
     internal fun chooseNote() {
-        if (selectedArchive.noteList.isEmpty()) {
-            println("К сожалению, список заметок пуст. Создайте новую заметку.\n")
+
+        methods.showList(selectedArchive.noteList, "заметок") {
             archives.subMenu(selectedArchive)
         }
 
-        println("Список заметок:")
-        selectedArchive.noteList.forEachIndexed { index, note ->
-            println("${index + 1}. ${note.name}")
-        }
-
-        val noteIndex: Int = methods.readInput("Введите номер заметки для выбора: ") {
-            if (it.isBlank()) {
-                println("Номер заметки не может быть пустым. Повторите ввод.")
-                null
-            } else {
-                it.toIntOrNull()?.takeIf { input -> input in 1..notes.size } ?: run {
-                        println("Введено некорректное значение, необходимо ввести номер вашей заметки.")
-                        null
-                    }
-            }
-        }
+        val noteIndex: Int = methods.readInput("Введите номер заметки для выбора: ", notes)
 
         if (noteIndex in 1..notes.size) {
             val selectedNote = notes[noteIndex - 1]
