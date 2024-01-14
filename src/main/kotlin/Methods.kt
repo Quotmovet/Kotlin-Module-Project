@@ -2,7 +2,7 @@ import kotlin.system.exitProcess
 import java.util.*
 class Methods {
 
-    val scanner = Scanner(System.`in`)
+    private val scanner = Scanner(System.`in`)
 
     // Паттерн меню
     fun menuPattern(title: String, scope: List<String>, actions: List<() -> Unit>) {
@@ -73,7 +73,7 @@ class Methods {
     }
 
     // Проверка на Int и пустую строку
-    inline fun <reified T> readInput(phrase: String, errorMessage: String? = null, crossinline converter: (String) -> T?): T {
+    private inline fun <reified T> readInput(phrase: String, errorMessage: String? = null, crossinline converter: (String) -> T?): T {
         var userInput: String
 
         do {

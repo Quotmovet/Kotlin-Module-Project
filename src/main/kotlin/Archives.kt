@@ -50,7 +50,7 @@ class Archives {
             mainMenu()
         }
 
-        val nameArchives: Int = methods.readInput("Выберите нужный вам архив, введя его номер:", allArchives)
+        val nameArchives: Int = methods.readInput("Выберите нужный вам архив, введя его номер: ", allArchives)
 
         val selectedArchive = allArchives[nameArchives - 1]
         println("Выбран архив: '${selectedArchive.name}'")

@@ -32,7 +32,9 @@ class WorkingWithNotes (private val archives: Archives){
 
         if (noteIndex in 1..notes.size) {
             val selectedNote = notes[noteIndex - 1]
-            println("""Выбрана заметка: ${selectedNote.name}
+            println("""
+            |-----------------------------------------------------------------------------------
+            |Выбрана заметка: ${selectedNote.name}
             |${selectedNote.text}
             |-----------------------------------------------------------------------------------
             |Чтобы вернуться в предыдущее меню, введите '1'""".trimMargin())
